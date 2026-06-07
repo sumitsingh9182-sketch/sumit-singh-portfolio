@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumit Singh - Lead Motion Designer & AI Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(245, 158, 11, 0.1);
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            font-size: 1.125rem;
+        }
+
+        .nav-logo-circle {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: #f59e0b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000000;
+            font-size: 0.875rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links button {
+            background: none;
+            border: none;
+            color: #d1d5db;
+            cursor: pointer;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        .nav-links button:hover {
+            color: #f59e0b;
+        }
+
+        .btn-primary {
+            background-color: #f59e0b;
+            color: #000000;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #d97706;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: none;
+            border: 1px solid #f59e0b;
+            color: #f59e0b;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f59e0b;
+            color: #000000;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 .accent {
+            color: #f59e0b;
+        }
+
+        .hero-content p {
+            color: #9ca3af;
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.875rem;
+            font-weight: 900;
+            color: #f59e0b;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 28rem;
+            height: 42rem;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            border: 2px solid rgba(245, 158, 11, 0.3);
+        }
+
+        /* Section */
+        section {
+            padding: 6rem 2rem;
+            border-top: 1px solid rgba(245, 158, 11, 0.1);
+        }
+
+        section h2 {
+            font-size: 2.25rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* Work Section */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .work-card:hover {
+            border-color: #f59e0b;
+            transform: translateY(-4px);
+        }
+
+        .work-card h3 {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .work-card p {
+            color: #9ca3af;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .work-card a {
+            color: #f59e0b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .work-card a:hover {
+            color: #d97706;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .experience-item {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .experience-item h3 {
+            color: #f59e0b;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-item .date {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            margin-left: 1rem;
+        }
+
+        .experience-item li {
+            color: #d1d5db;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .experience-item li:before {
+            content: "• ";
+            color: #f59e0b;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-group {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .skill-group h3 {
+            color: #f59e0b;
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .skill-group ul {
+            list-style: none;
+        }
+
+        .skill-group li {
+            color: #d1d5db;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .skill-group li:before {
+            content: "✓ ";
+            color: #f59e0b;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Video Section */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .video-card:hover {
+            border-color: #f59e0b;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 150px;
+            background: rgba(245, 158, 11, 0.1);
+            border-radius: 0.375rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        .video-card h3 {
+            color: #f59e0b;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Contact Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #111111;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #9ca3af;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #f59e0b;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #d1d5db;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 0.375rem;
+            color: #ffffff;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f59e0b;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(245, 158, 11, 0.05);
+            border-top: 1px solid rgba(245, 158, 11, 0.2);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: #f59e0b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d97706;
+        }
+
+        .footer-bottom {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(245, 158, 11, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Availability Badge */
+        .availability {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <div class="nav-logo-circle">SS</div>
+                    <span>Sumit Singh</span>
+                </div>
+                <div class="nav-links">
+                    <button onclick="document.getElementById('work').scrollIntoView({behavior: 'smooth'})">Work</button>
+                    <button onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})">Experience</button>
+                    <button onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">Skills</button>
+                    <button onclick="document.getElementById('videos').scrollIntoView({behavior: 'smooth'})">Videos</button>
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</button>
+                    <a href="https://www.dropbox.com/scl/fi/zzd1m2u1hf30asxbekkoc/Mufaddal_Kachwala_Resume_V3-copy.pdf" class="btn-secondary">Resume</a>
+                    <button class="btn-primary" onclick="openContactModal()">Hire Me</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container" style="grid-column: 1;">
+            <div class="availability">✓ Freelance Available</div>
+            <h1>Lead Motion<br>Designer<br>& <span class="accent">AI Specialist</span></h1>
+            <p>I'm a passionate motion graphic designer with a flair for bringing ideas to life through captivating visuals and dynamic animations. I thrive on turning concepts into compelling stories that not only engage but also leave a lasting impression.</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">100M+</div>
+                    <div class="stat-label">YouTube Content Views</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">300+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="openContactModal()">Hire Me</button>
+                <a href="https://www.dropbox.com/scl/fi/zzd1m2u1hf30asxbekkoc/Mufaddal_Kachwala_Resume_V3-copy.pdf" class="btn-secondary">Download Resume</a>
+                <button class="btn-secondary" onclick="document.getElementById('work').scrollIntoView({behavior: 'smooth'})">View Work</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://drive.google.com/uc?export=view&id=1OkCGFOL_ac3Xj2WtuIz1BIkksz2PISEC" alt="Sumit Singh" style="background: linear-gradient(135deg, #1f2937 0%, #111827 100%); border-radius: 0.5rem;">
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work">
+        <div class="container">
+            <h2>Selected Work</h2>
+            <div class="work-grid">
+                <div class="work-card">
+                    <h3>AI E-Learning Platform</h3>
+                    <p>High-impact campaign visuals shaped for social, broadcast, and brand communication.</p>
+                    <a href="#">View Case Study →</a>
+                </div>
+                <div class="work-card">
+                    <h3>Broadcast & Promo Reel</h3>
+                    <p>High-impact campaign visuals shaped for social, broadcast, and brand communication.</p>
+                    <a href="#">View Case Study →</a>
+                </div>
+                <div class="work-card">
+                    <h3>Campaign Motion Package</h3>
+                    <p>Campaign-ready motion graphics built for clarity, pace, and retention across channels.</p>
+                    <a href="#">View Case Study →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <h3>Sr. Motion Graphics Designer - Team Lead</h3>
+                    <div class="date">Applause (Firewalker Apps) | 2024 - Present</div>
+                    <ul>
+                        <li>Led a cross-functional team of designers and animators</li>
+                        <li>Designed motion graphics for SaaS and enterprise clients</li>
+                        <li>Integrated AI tools into production workflows</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Motion Graphics Lead - Head of Production</h3>
+                    <div class="date">Mandala Studios | 2020 - 2024</div>
+                    <ul>
+                        <li>Managed motion design for YouTube content with 2.6M+ views</li>
+                        <li>Built production pipelines for 50+ projects</li>
+                        <li>Collaborated with brand and product teams</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Motion Graphics Designer</h3>
+                    <div class="date">Freelance | 2019 - Present</div>
+                    <ul>
+                        <li>Created motion graphics for various clients</li>
+                        <li>Specialized in AI-assisted workflows</li>
+                        <li>Delivered high-quality assets on tight deadlines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3>Core Skills</h3>
+                    <ul>
+                        <li>Motion Graphics & Animation</li>
+                        <li>Social & Broadcast Formats</li>
+                        <li>Visual Storytelling</li>
+                        <li>Color Theory & Grading</li>
+                        <li>Product Explainers</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Software Proficiency</h3>
+                    <ul>
+                        <li>After Effects</li>
+                        <li>Premiere Pro</li>
+                        <li>Illustrator</li>
+                        <li>Photoshop</li>
+                        <li>Blender</li>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>AI & Creative Tools</h3>
+                    <ul>
+                        <li>Kling 3.0</li>
+                        <li>Runway</li>
+                        <li>Pika</li>
+                        <li>MidJourney</li>
+                        <li>Flux Pro</li>
+                        <li>Speakerbox</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="videos">
+        <div class="container">
+            <h2>Video Showcase</h2>
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: #f59e0b; margin-bottom: 1.5rem; font-size: 1.5rem;">Ai + Motion</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/dPHUlKhCRSM" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 1</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/NfG4MhsyGq0" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 2</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/90PNdgGWnUM" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 3</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Gw8TqnlcZiQ" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 4</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/yPCqIwgXYx0" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 5</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/aoKSWOqe6RA" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 6</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/ZS5_wTSMLQM" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 7</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/gdzkP0wAFmE" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 8</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Sa2TfPPjkTI" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 9</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/E1eDZFpKGHU" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 10</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/7r3vonpSbDk" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 11</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/rmAFCNA5kG0" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 12</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/SWYahaAiuc8" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 13</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/3Z6T1YolxWs" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 14</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/-HD72eAVjJE" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 15</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/jtI-a2uw7Vs" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 16</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/cXDpMHMQCxc" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 17</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/c10Dd51UsPE" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 18</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/DroczZH1kZM" frameborder="0" allowfullscreen></iframe>
+                        <h3>Video 19</h3>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 style="color: #f59e0b; margin-bottom: 1.5rem; font-size: 1.5rem;">Talking Heads Style</h3>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/BGs7h0eh_Co" frameborder="0" allowfullscreen></iframe>
+                        <h3>Talking Heads 1</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/kukJQfpOgeQ" frameborder="0" allowfullscreen></iframe>
+                        <h3>Talking Heads 2</h3>
+                    </div>
+                    <div class="video-card">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/-XrHD1kNEFc" frameborder="0" allowfullscreen></iframe>
+                        <h3>Talking Heads 3</h3>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container" style="text-align: center;">
+            <h2>Let's Create Something Amazing</h2>
+            <p style="color: #9ca3af; font-size: 1.125rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                I'm always interested in hearing about new projects and opportunities. Feel free to reach out!
+            </p>
+            <div class="footer-links">
+                <a href="mailto:sumitsingh9182@gmail.com">Email</a>
+                <a href="#">Connect</a>
+                <a href="#">Links</a>
+                <button class="btn-primary" onclick="openContactModal()">Get In Touch</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-bottom">&copy; 2026 Sumit Singh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Let's Work Together</h2>
+                <button class="close-btn" onclick="closeContactModal()">×</button>
+            </div>
+            <p style="color: #9ca3af; margin-bottom: 1.5rem;">Fill in the form and I'll get back to you soon.</p>
+            <form name="contact" method="POST" netlify netlify-honeypot="bot-field">
+                <input type="hidden" name="bot-field">
+                
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. John Smith" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="e.g. john@company.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project, timeline, or any questions..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openContactModal() {
+            document.getElementById('contactModal').classList.add('active');
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.remove('active');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                modal.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
